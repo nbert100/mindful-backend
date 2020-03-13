@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_13_003441) do
+ActiveRecord::Schema.define(version: 2020_03_13_013941) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "client_id"
     t.integer "provider_id"
-    t.datetime "appointment"
     t.string "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "when"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_003441) do
     t.string "zipcode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "providers", force: :cascade do |t|
