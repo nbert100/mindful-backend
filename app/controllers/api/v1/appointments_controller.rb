@@ -1,4 +1,36 @@
 class Api::V1::AppointmentsController < ApplicationController
 
+    before_action :set_appointment
 
+    def index
+        @appointments = @client.appointments
+        render json: @appointments        
+    end
+
+    def create
+        @appointment = @client.appointments.build(appointment_params) 
+        if @appointment.save
+            render json: @appointment
+        else 
+            render json: {error: 'Appointment not saved'}
+    end
+
+    def show
+        @appointment = @client.appointments.find_by(id: params[:id])
+        # or @appointment = Appointment.find(params[:id])
+    end
+
+    def destroy
+       set_appointment
+       @appointment.destroy
+       #return json?
+    end
+
+    private
+    def set_appointment
+        @client = Client.find(params[:client_id])
+    end
+        def appointment_params
+            params.require(:appointment).permit(:client_id, :provider_id, :when, :kind)
+        end
 end

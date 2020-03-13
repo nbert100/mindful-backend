@@ -6,6 +6,7 @@ class Api::V1::ProvidersController < ApplicationController
     end
 
     def create
+    #should be grabbed by API?
         @provider = Provider.new(provider_params)
         if @provider.save
             render json: @provider
