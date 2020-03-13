@@ -1,17 +1,29 @@
 (User)
-has multiple clients
+has_many :clients
 
 Client 
+belongs_to :user
 has_many :appointments
 has_many :providers, through :appointments
+(has_one :insurance)
+((notes table))
 :first_name - string, :last_name - string, :CIN (which will serve as ID) - string, :MCO - string, :phone number - string, :address - string, :zipcode - string}
 
 Appointments
 belongs_to :client
 belongs_to :provider
 :appointment - datetime, :client_id - int, :provider_id - int, :note - string (notes array?)
+((notes?))
 
 Provider
 has_many :appointments 
 has_many :clients, through :appointments
-:last_name - string, :insurance (array of strings), :specialty - string, :phone - string, :fax - string, :address - string (or object?), :zipcode - string
+(has_many :insurance)
+:last_name - string, :specialty - string, :phone - string, :fax - string, :address - string (or object?), :zipcode - string
+
+(Insurance)
+(has_many :providers)
+
+(prov_insurance)
+(belongs_to :insurance)
+(belongs_to :provider)

@@ -4,12 +4,9 @@ class CreateProviders < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.string :specialty
-      t.string :insurance 
-      # how to make this reflect an array?
-      t.string :phone_number
-      t.string :fax_number
+      t.string :phone
+      t.string :fax
       t.string :address
-      # or should this be an object?
       t.string :zipcode
 
       t.timestamps

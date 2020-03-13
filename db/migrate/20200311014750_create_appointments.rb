@@ -4,8 +4,7 @@ class CreateAppointments < ActiveRecord::Migration[5.2]
       t.integer :client_id
       t.integer :provider_id
       t.datetime :appointment
-      t.string :note
-      # how to create option of multiple notes
+      t.string :kind
 
       t.timestamps
     end
