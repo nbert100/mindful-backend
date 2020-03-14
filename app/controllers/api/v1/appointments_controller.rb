@@ -3,6 +3,7 @@ class Api::V1::AppointmentsController < ApplicationController
     before_action :set_appointment
 
     def index
+        # consider conditional? would it be helpful?
         @appointments = @client.appointments
         render json: @appointments        
     end
