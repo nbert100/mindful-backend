@@ -29,3 +29,4 @@ class Api::V1::ClientsController < ApplicationController
             params.require(:client).permit(:first_name, :last_name, :cin, :user_id)
         end
 end
+

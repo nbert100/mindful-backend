@@ -9,5 +9,5 @@
 
 user = User.create(last_name: 'Brown', first_name: 'Sally', username: 'sbrown', password_digest: 'abc123')
 client1 = Client.create(user_id: 1, first_name: 'Mary', last_name: 'Smith', cin: '726472949', phone: '2015552734', address: '1234 Any Street, Town, NY', zipcode: '11233')
-provider1 = Provider.create(first_name: 'Ken', last_name: 'Doll', specialty: 'Psychiatrist', phone: '1235554321', fax: '1235564321', address: '324 Hospital Way, Town, NY', zipcode: '12435')
-appointment1 = Appointment.create(client_id: 1, provider_id: 1, when: Date.today, kind: 'initial')
+provyder1 = Provyder.create(first_name: 'Ken', last_name: 'Doll', specialty: 'Psychiatrist', title: 'MD', phone: '1235554321', fax: '1235564321', address: '324 Hospital Way, Town, NY', zipcode: '12435')
+appointment1 = Appointment.create(client_id: 1, provyder_id: 1, when: Date.today, kind: 'initial')

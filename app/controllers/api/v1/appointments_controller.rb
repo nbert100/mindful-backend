@@ -32,6 +32,6 @@ class Api::V1::AppointmentsController < ApplicationController
         @client = Client.find(params[:client_id])
     end
         def appointment_params
-            params.require(:appointment).permit(:client_id, :provider_id, :when, :kind)
+            params.require(:appointment).permit(:client_id, :provyder_id, :when, :kind)
         end
 end

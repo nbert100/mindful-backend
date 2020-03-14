@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_13_013941) do
+ActiveRecord::Schema.define(version: 2020_03_14_195552) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "client_id"
-    t.integer "provider_id"
+    t.integer "provyder_id"
     t.string "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -33,9 +33,10 @@ ActiveRecord::Schema.define(version: 2020_03_13_013941) do
     t.integer "user_id"
   end
 
-  create_table "providers", force: :cascade do |t|
+  create_table "provyders", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "title"
     t.string "specialty"
     t.string "phone"
     t.string "fax"

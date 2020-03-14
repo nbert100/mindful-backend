@@ -1,8 +1,9 @@
-class CreateProviders < ActiveRecord::Migration[5.2]
+class CreateProvyders < ActiveRecord::Migration[5.2]
   def change
-    create_table :providers do |t|
+    create_table :provyders do |t|
       t.string :first_name
       t.string :last_name
+      t.string :title
       t.string :specialty
       t.string :phone
       t.string :fax
