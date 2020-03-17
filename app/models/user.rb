@@ -1,3 +1,3 @@
-class User < ApplicationRecord
-    has_many :clients
-end
+# class User < ApplicationRecord
+#     has_many :clients
+# end

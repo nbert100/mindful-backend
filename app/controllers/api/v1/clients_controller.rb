@@ -6,7 +6,7 @@ class Api::V1::ClientsController < ApplicationController
     end
 
     def create
-        binding.pry
+        # binding.pry
         client = Client.new(client_params)
         if client.save
             render json: client
