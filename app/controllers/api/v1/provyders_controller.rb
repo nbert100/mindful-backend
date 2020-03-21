@@ -26,6 +26,6 @@ class Api::V1::ProvydersController < ApplicationController
 
     private
         def provyder_params
-            params.require(:provyder).permit(:first_name, :last_name, :specialty)
+            params.require(:provyder).permit(:first_name, :last_name, :specialty, :title, :phone, :fax, :address, :zipcode)
         end
 end
