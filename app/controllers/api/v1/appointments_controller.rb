@@ -14,6 +14,7 @@ class Api::V1::AppointmentsController < ApplicationController
             render json: @appointment
         else 
             render json: {error: 'Appointment not saved'}
+        end
     end
 
     def show
@@ -28,9 +29,10 @@ class Api::V1::AppointmentsController < ApplicationController
     end
 
     private
-    def set_appointment
-        @client = Client.find(params[:client_id])
-    end
+        def set_appointment
+            @client = Client.find(params[:client_id])
+        end
+
         def appointment_params
             params.require(:appointment).permit(:client_id, :provyder_id, :when, :kind)
         end
