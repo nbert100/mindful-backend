@@ -35,6 +35,6 @@ class Api::V1::AppointmentsController < ApplicationController
         end
 
         def appointment_params
-            params.require(:appointment).permit(:client_id, :provyder_id, :when, :kind)
+            params.require(:appointment).permit(:client_id, :provyder_id, :when, :kind, provyder_attributes: [:first_name, :last_name, :specialty, :title, :phone, :fax, :address, :zipcode])
         end
 end
