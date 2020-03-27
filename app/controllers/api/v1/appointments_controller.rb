@@ -10,9 +10,10 @@ class Api::V1::AppointmentsController < ApplicationController
 
     def create
         @appointment = @client.appointments.build(appointment_params) 
-        if @appointment.save
+        if @appointment.save 
             render json: @appointment
-        else 
+        else
+            @appointment.build_provyder unless @appointment.provyder
             render json: {error: 'Appointment not saved'}
         end
     end
