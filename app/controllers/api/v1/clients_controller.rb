@@ -17,7 +17,7 @@ class Api::V1::ClientsController < ApplicationController
 
     def show
         client = Client.find(params[:id])
-        render json: client
+        render json: { client: client, appointments: client.appointments, provyders: client.provyders.uniq }
     end
 
     def destroy
