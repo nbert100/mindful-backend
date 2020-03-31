@@ -17,7 +17,9 @@ class Api::V1::ClientsController < ApplicationController
 
     def show
         client = Client.find(params[:id])
-        render json: { client: client, appointments: client.appointments, provyders: client.provyders.uniq }
+        render json: client, :include => [:appointments => [:include => [:provyder]]]
+    #   clean up duplicate data
+
     end
 
     def destroy
