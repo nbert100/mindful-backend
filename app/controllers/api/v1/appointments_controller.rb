@@ -24,7 +24,6 @@ class Api::V1::AppointmentsController < ApplicationController
     end
 
     def destroy
-       set_appointment
        @appointment.destroy
        #return json?
     end
