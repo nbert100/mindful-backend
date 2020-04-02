@@ -24,8 +24,11 @@ class Api::V1::AppointmentsController < ApplicationController
     end
 
     def destroy
+        @appointment = Appointment.find(params[:id])
+        # @appClient = Client.find(appointment.client_id)
        @appointment.destroy
-       #return json?
+    #    render json: @appClient
+    render json: @appointment
     end
 
     private
